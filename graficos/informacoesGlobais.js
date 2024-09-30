@@ -6,6 +6,19 @@ async function vizualizarInformacaoGlobais(){
 const res = await fetch(url)
 const dados = await res.json()
 console.log(dados);
+
+const paragrafo = document.createElement("p")
+paragrafo.classList.add ("graficos-container__texto")
+
+paragrafo.innerHTML = `vocẽ sabia que o mundo tem 6 continentes ${dados.total_pessoas_conectadas}`
+
+
+console.log(paragrafo)
+
+const container = document.getElementById("graficos-container")
+
+container.appendChild(paragrafo)
+
 }
 
 vizualizarInformacaoGlobais();
